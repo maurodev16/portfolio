@@ -1,8 +1,8 @@
-# portfolio
+# My Portfolio
 
-A new Flutter project.
+Made with Dart/Flutter.
 
-## Getting Started
+## Welcome
 
 This project is a starting point for a Flutter application.
 
