@@ -50,6 +50,30 @@ const sr = ScrollReveal({
 //     reset: true
 });
 
+/*==== OPEN IMAGE GALERY ====*/
+function openUsitPopup(){
+    document.getElementById('popup-usit').style.display ='grid';
+ 
+}
+
+function closeUsitPopup() {
+    document.getElementById('popup-usit').style.display='none';
+    
+}
+
+function openQrPopup(){
+    document.getElementById('popup-qrcode').style.display ='grid';
+ 
+}
+
+function closeQrPopup() {
+    document.getElementById('popup-qrcode').style.display='none';
+    
+}
+
+
+
+
 sr.reveal('.home__data, .about__img, .skills__subtitle, .skills__text',{}); 
 sr.reveal('.home__img, .about__subtitle, .about__text, .skills__img',{delay: 400}); 
 sr.reveal('.home__social-icon',{ interval: 200}); 
