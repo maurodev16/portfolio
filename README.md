@@ -1,5 +1,3 @@
-# portfolio_flutter
-
 Welcome to my **Portfolio** built with **Flutter**! 🚀
 
 This is a new Flutter project where I showcase my skills, projects, and experience as a **Mobile Flutter Developer**. Explore and discover the various sections that describe my work and passions!
