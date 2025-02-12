@@ -12,6 +12,11 @@ dependencies:
   get:
   google_fonts: ^6.2.1
   font_awesome_flutter: 
+  cached_network_image:
+  url_launcher:
+  mailer: ^5.1.0
+  flutter_dotenv: ^5.2.1
+  carousel_slider:
 
 dev_dependencies:
   flutter_test:
@@ -19,3 +24,5 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+  assets:
+    - .env

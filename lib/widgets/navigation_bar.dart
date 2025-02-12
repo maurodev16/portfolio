@@ -18,67 +18,75 @@ class CustomNavBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Verifica se está em modo mobile (largura < 600)
+    bool isMobile = MediaQuery.of(context).size.width < 600;
+
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
-      color: Colors.black.withValues(alpha: 0.7),
+      color: Colors.black..withValues(alpha: 0.7),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           Text(
             '< Rodrigues />',
             style: GoogleFonts.greatVibes(
-              fontSize: 40,
+              fontSize: 30,
               letterSpacing: 2,
             ),
           ),
-          Row(
-            children: [
-              TextButton(
-                onPressed: () => _scrollToSection(0),
-                child: Text(
-                  'home'.tr,
-                  style: GoogleFonts.orbitron(
-                    color: Colors.white,
-                    letterSpacing: 2,
-                  ),
-                ),
-              ),
-              SizedBox(width: 20),
-              TextButton(
-                onPressed: () => _scrollToSection(1),
-                child: Text(
-                  'projects'.tr,
-                  style: GoogleFonts.orbitron(
-                    color: Colors.white,
-                    letterSpacing: 2,
-                  ),
-                ),
-              ),
-              SizedBox(width: 20),
-              TextButton(
-                onPressed: () => _scrollToSection(2),
-                child: Text(
-                  'about'.tr,
-                  style: GoogleFonts.orbitron(
-                    color: Colors.white,
-                    letterSpacing: 2,
-                  ),
-                ),
-              ),
-              SizedBox(width: 20),
-              TextButton(
-                onPressed: () => _scrollToSection(3),
-                child: Text(
-                  'contact'.tr,
-                  style: GoogleFonts.orbitron(
-                    color: Colors.white,
-                    letterSpacing: 2,
-                  ),
-                ),
-              ),
-            ],
-          ),
+          if (!isMobile)
+            // Menu para Desktop
+            Row(
+              children: [
+                _buildNavButton('home'.tr, 0),
+                SizedBox(width: 20),
+                _buildNavButton('projects'.tr, 1),
+                SizedBox(width: 20),
+                _buildNavButton('about'.tr, 2),
+                SizedBox(width: 20),
+                _buildNavButton('contact'.tr, 3),
+              ],
+            )
+          else
+            // Menu Hamburger para Mobile
+            PopupMenuButton<int>(
+              icon: Icon(Icons.menu, color: Colors.white),
+              color: Colors.black..withValues(alpha: 0.9),
+              onSelected: _scrollToSection,
+              itemBuilder: (BuildContext context) => [
+                _buildPopupMenuItem('home'.tr, 0),
+                _buildPopupMenuItem('projects'.tr, 1),
+                _buildPopupMenuItem('about'.tr, 2),
+                _buildPopupMenuItem('contact'.tr, 3),
+              ],
+            ),
         ],
+      ),
+    );
+  }
+
+  Widget _buildNavButton(String text, int section) {
+    return TextButton(
+      onPressed: () => _scrollToSection(section),
+      child: Text(
+        text,
+        style: GoogleFonts.playfair(
+          color: Colors.white,
+          letterSpacing: 2,
+        ),
+      ),
+    );
+  }
+
+  PopupMenuItem<int> _buildPopupMenuItem(String text, int section) {
+    return PopupMenuItem<int>(
+      value: section,
+      child: Text(
+        text,
+        style: GoogleFonts.playfair(
+          color: Colors.white,
+          letterSpacing: 2,
+        ),
       ),
     );
   }
