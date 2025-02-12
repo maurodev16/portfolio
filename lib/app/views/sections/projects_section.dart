@@ -6,7 +6,7 @@ class ProjectsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: Get.height,
-      color: Colors.green[100],
+      color: const Color.fromARGB(255, 77, 89, 78),
       child: Center(
         child: Text(
           'projects_section'.tr, // Traduzido

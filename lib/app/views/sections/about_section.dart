@@ -6,7 +6,7 @@ class AboutSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: Get.height,
-      color: Colors.orange[100],
+      color: const Color.fromARGB(255, 23, 20, 14),
       child: Center(
         child: Text(
           'about_section'.tr, // Traduzido
