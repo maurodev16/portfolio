@@ -28,4 +28,4 @@ To get a local copy of this project, follow these simple steps:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/portfolio_flutter.git
+   git clone https://github.com/maurodev16/portfolio_flutter.git
