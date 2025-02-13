@@ -138,7 +138,8 @@ class HomeSection extends StatelessWidget {
           borderRadius: BorderRadius.circular(20),
           boxShadow: [
             BoxShadow(
-              color: Colors.black.withValues(alpha: 0.5),
+              color: const Color.fromARGB(255, 217, 179, 179)
+                  .withValues(alpha: 0.5),
               blurRadius: 20,
               offset: const Offset(0, 5),
             ),
@@ -159,7 +160,7 @@ class HomeSection extends StatelessWidget {
                 errorWidget: (context, url, error) => const Icon(Icons.image),
               ),
               Container(
-                color: Colors.black..withValues(alpha: 0.5),
+                color: Colors.transparent,
               ),
             ],
           ),

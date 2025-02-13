@@ -5,8 +5,48 @@ import 'sections/contact_section.dart';
 import 'sections/home_section.dart';
 import 'sections/projects_section.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   final ScrollController scrollController = ScrollController();
+  bool showBackToTop = false;
+
+  @override
+  void initState() {
+    super.initState();
+    scrollController.addListener(() {
+      if (scrollController.offset >= 400) {
+        if (!showBackToTop) {
+          setState(() {
+            showBackToTop = true;
+          });
+        }
+      } else {
+        if (showBackToTop) {
+          setState(() {
+            showBackToTop = false;
+          });
+        }
+      }
+    });
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
+  void _scrollToTop() {
+    scrollController.animateTo(
+      0,
+      duration: const Duration(milliseconds: 500),
+      curve: Curves.easeInOut,
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +63,37 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
       ),
+      // Botão flutuante fixo no canto inferior direito
+      floatingActionButton: AnimatedOpacity(
+        opacity: showBackToTop ? 1.0 : 0.0,
+        duration: const Duration(milliseconds: 200),
+        child: Visibility(
+          visible: showBackToTop,
+          child: FloatingActionButton(
+            onPressed: _scrollToTop,
+            child: Container(
+              width: 56, // Tamanho padrão do FAB
+              height: 56,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: [
+                    Colors.black.withValues(alpha: 0.7),
+                    Colors.black.withValues(alpha: 0.7),
+                  ],
+                ),
+              ),
+              child: const Icon(
+                Icons.arrow_upward,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 }

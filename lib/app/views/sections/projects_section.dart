@@ -63,23 +63,23 @@ class ProjectsSection extends StatelessWidget {
         horizontal: isMobile ? 20 : 40,
         vertical: 20,
       ),
-      color: const Color.fromARGB(255, 30, 30, 30),
+      color: const Color.fromARGB(255, 228, 225, 225),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'Projetos',
+            'projects',
             style: GoogleFonts.playfair(
               fontSize: isMobile ? 32 : 40,
               fontWeight: FontWeight.bold,
-              color: Colors.white,
+              color: Colors.black,
             ),
           ),
           const SizedBox(height: 20),
           Expanded(
             child: GridView.builder(
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: isMobile ? 1 : 3,
+                crossAxisCount: isMobile ? 2 : 4,
                 crossAxisSpacing: 20,
                 mainAxisSpacing: 20,
                 childAspectRatio: isMobile ? 1.2 : 0.85,
