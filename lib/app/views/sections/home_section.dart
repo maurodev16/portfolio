@@ -150,15 +150,15 @@ class HomeSection extends StatelessWidget {
           child: Stack(
             fit: StackFit.expand,
             children: [
-              CachedNetworkImage(
-                imageUrl:
-                    'https://g5vqujw8iglfdivd.public.blob.vercel-storage.com/portfolio_web/my_pic_01-jJWyP97XJwxkC0g7Z62XLCDMU68YE0.jpg',
-                fit: BoxFit.cover,
-                placeholder: (context, url) => const Center(
-                  child: CircularProgressIndicator(),
-                ),
-                errorWidget: (context, url, error) => const Icon(Icons.image),
-              ),
+              // CachedNetworkImage(
+              //   imageUrl:
+              //       'https://g5vqujw8iglfdivd.public.blob.vercel-storage.com/portfolio_web/my_pic_01-jJWyP97XJwxkC0g7Z62XLCDMU68YE0.jpg',
+              //   fit: BoxFit.cover,
+              //   placeholder: (context, url) => const Center(
+              //     child: CircularProgressIndicator(),
+              //   ),
+              //   errorWidget: (context, url, error) => const Icon(Icons.image),
+              // ),
               Container(
                 color: Colors.transparent,
               ),

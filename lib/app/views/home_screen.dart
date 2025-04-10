@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter/app/views/sections/flutter_tips_section.dart';
 import '../../widgets/navigation_bar.dart';
 import 'sections/about_section.dart';
 import 'sections/contact_section.dart';
@@ -60,6 +61,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ProjectsSection(),
             AboutSection(),
             ContactSection(),
+            FlutterTipsSection(),
           ],
         ),
       ),

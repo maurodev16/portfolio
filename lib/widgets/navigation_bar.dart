@@ -45,6 +45,8 @@ class CustomNavBar extends StatelessWidget {
                 _buildNavButton('about'.tr, 2),
                 SizedBox(width: 20),
                 _buildNavButton('contact'.tr, 3),
+                SizedBox(width: 20),
+                _buildNavButton('Flutter tips'.tr, 4),
               ],
             )
           else
@@ -58,6 +60,7 @@ class CustomNavBar extends StatelessWidget {
                 _buildPopupMenuItem('projects'.tr, 1),
                 _buildPopupMenuItem('about'.tr, 2),
                 _buildPopupMenuItem('contact'.tr, 3),
+                _buildPopupMenuItem('Flutter Tips'.tr, 4),
               ],
             ),
         ],

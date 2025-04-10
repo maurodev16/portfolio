@@ -18,7 +18,7 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       translations: AppTranslations(),
-      locale: Locale('en', 'US'), // Idioma padrão
+      locale: Locale('de', 'DE'), // Idioma padrão
       fallbackLocale: Locale('en', 'US'),
       initialRoute: Routes.HOME,
       getPages: AppPages.pages,
